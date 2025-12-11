@@ -247,10 +247,15 @@ This project is created for educational purposes as part of the GIAIC Hackathon 
 ## 📞 Contact
 
 **Aziza Siddiqui**
-- 📧 Email: wahishaikh545@gmail.com 
-- 💼 LinkedIn: https://www.linkedin.com/in/aziza-siddiqui-379421306/
-- 🐙 GitHub: [@WA-code-Github-Account](https://github.com/WA-code-Github-Account)
-- 🌐 Live Site: [View Bo0k) : humanoid-robotics-book-a6v7.vercel.app
+
+📧 Email: wahishaikh545@gmail.com
+
+💼 LinkedIn: https://www.linkedin.com/in/aziza-siddiqui-379421306/
+
+🐙 GitHub: https://github.com/WA-code-Github-Account
+
+🌐 View Book: https://humanoid-robotics-book-a6v7.vercel.app
+ 🚀
 
 ---
 
