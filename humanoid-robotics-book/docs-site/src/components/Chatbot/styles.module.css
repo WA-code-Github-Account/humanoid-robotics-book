@@ -1,37 +1,7 @@
-.chatbotContainer {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  z-index: 9999;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.chatbotButton {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: none;
-  background: linear-gradient(135deg, #0057b7, #ffd700); /* book theme */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 32px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.chatbotButton:hover {
-  transform: scale(1.2);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-}
-
-.openButton {
-  background: linear-gradient(135deg, #ffd700, #0057b7);
-}
-
 .chatWindow {
-  width: 600px; /* horizontal width bada */
-  max-height: 700px; /* vertical height */
-  background: #ffffff; /* light color */
+  width: 480px;       /* horizontal thodi kam */
+  max-height: 750px;  /* vertical lamba */
+  background: #f0f4f8; /* book homepage theme color */
   border-radius: 25px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -42,14 +12,9 @@
   position: relative; /* cross button ke liye */
 }
 
-@keyframes slideUp {
-  from { transform: translateY(250px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
 .chatHeader {
   padding: 18px 25px;
-  background: linear-gradient(135deg, #0057b7, #ffd700);
+  background: #0057b7; /* book header color */
   color: #fff;
   font-weight: bold;
   font-size: 20px;
@@ -58,120 +23,15 @@
   position: relative;
 }
 
-.closeButton {
-  position: absolute;
-  bottom: 12px; /* bottom-right me rakha */
-  right: 12px;
-  background: #ff4d4f;
-  border: none;
+.chatbotButton {
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: all 0.2s ease-in-out;
-}
-
-.closeButton:hover {
-  transform: scale(1.2);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-}
-
-.chatMessages {
-  flex: 1;
-  padding: 20px 25px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.welcomeMessage {
-  text-align: center;
-  font-size: 16px;
-  color: #666;
-}
-
-.message {
-  padding: 14px 20px;
-  border-radius: 22px;
-  max-width: 80%;
-  word-wrap: break-word;
-  font-size: 16px;
-}
-
-.userMessage {
-  background: #cce5ff; /* light blue */
-  color: #004085;
-  align-self: flex-end;
-  border-bottom-right-radius: 0;
-}
-
-.botMessage {
-  background: #fff9e6; /* light cream */
-  color: #856404;
-  align-self: flex-start;
-  border-bottom-left-radius: 0;
-}
-
-.chatInput {
-  display: flex;
-  padding: 12px 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  background: #f1f1f1;
-}
-
-.chatInput textarea {
-  flex: 1;
-  padding: 12px 18px;
-  border-radius: 18px;
   border: none;
-  resize: none;
-  font-size: 15px;
-  background: #fff;
-  color: #333;
-  outline: none;
-}
-
-.sendButton {
-  margin-left: 12px;
-  padding: 12px 18px;
-  background: linear-gradient(135deg, #0057b7, #ffd700);
-  border: none;
-  border-radius: 18px;
+  background: #ffd700; /* book homepage yellow theme */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   color: white;
+  font-size: 28px;
   cursor: pointer;
-  font-weight: bold;
-  transition: all 0.2s ease-in-out;
-}
-
-.sendButton:hover {
-  transform: scale(1.08);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
-}
-
-.typingIndicator {
-  display: flex;
-  gap: 6px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  background: #333;
-  border-radius: 50%;
-  animation: blink 1s infinite;
-}
-
-.dot:nth-child(2) { animation-delay: 0.2s; }
-.dot:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes blink {
-  0%, 80%, 100% { opacity: 0; }
-  40% { opacity: 1; }
+  transition: all 0.3s ease-in-out;
 }
