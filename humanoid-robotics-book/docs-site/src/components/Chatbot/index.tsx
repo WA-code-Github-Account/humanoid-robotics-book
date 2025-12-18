@@ -15,10 +15,10 @@ const Chatbot = () => {
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  // Scroll chat to bottom
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
@@ -31,7 +31,6 @@ const Chatbot = () => {
       text: inputValue,
       sender: 'user' as const,
     };
-
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setIsLoading(true);
@@ -39,19 +38,11 @@ const Chatbot = () => {
     try {
       const response = await fetch(apiUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: inputValue,
-          language: 'en',
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: inputValue, language: 'en' }),
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error ${response.status}`);
-      }
-
+      if (!response.ok) throw new Error(`HTTP error ${response.status}`);
       const data = await response.json();
 
       const botMessage = {
@@ -59,7 +50,6 @@ const Chatbot = () => {
         text: data.response,
         sender: 'bot' as const,
       };
-
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
       const errorMessage = {
@@ -74,9 +64,7 @@ const Chatbot = () => {
     }
   };
 
-  const handleKeyPress = (
-    e: React.KeyboardEvent<HTMLTextAreaElement>
-  ) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSend();
@@ -87,28 +75,24 @@ const Chatbot = () => {
     const textarea = document.querySelector(
       `.${styles.chatInput} textarea`
     ) as HTMLTextAreaElement;
-
     if (textarea) {
       textarea.style.height = 'auto';
-      textarea.style.height = `${Math.min(
-        textarea.scrollHeight,
-        100
-      )}px`;
+      textarea.style.height = `${Math.min(textarea.scrollHeight, 100)}px`;
     }
   }, [inputValue]);
 
   return (
     <div className={styles.chatbotContainer}>
+      {/* Floating Button */}
       <button
-        className={`${styles.chatbotButton} ${
-          isOpen ? styles.openButton : ''
-        }`}
+        className={`${styles.chatbotButton} ${isOpen ? styles.openButton : ''}`}
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? 'Close chat' : 'Open chat'}
       >
         {isOpen ? '×' : '🤖'}
       </button>
 
+      {/* Chat Window */}
       {isOpen && (
         <div className={styles.chatWindow}>
           <div className={styles.chatHeader}>
@@ -119,32 +103,23 @@ const Chatbot = () => {
             {messages.length === 0 ? (
               <div className={styles.welcomeMessage}>
                 <p>Hello! I'm your book assistant.</p>
-                <p>
-                  Ask me anything about Physical AI & Humanoid
-                  Robotics.
-                </p>
+                <p>Ask me anything about Physical AI & Humanoid Robotics.</p>
               </div>
             ) : (
               messages.map(message => (
                 <div
                   key={message.id}
                   className={`${styles.message} ${
-                    message.sender === 'user'
-                      ? styles.userMessage
-                      : styles.botMessage
+                    message.sender === 'user' ? styles.userMessage : styles.botMessage
                   }`}
                 >
-                  <div className={styles.messageText}>
-                    {message.text}
-                  </div>
+                  <div className={styles.messageText}>{message.text}</div>
                 </div>
               ))
             )}
 
             {isLoading && (
-              <div
-                className={`${styles.message} ${styles.botMessage}`}
-              >
+              <div className={`${styles.message} ${styles.botMessage}`}>
                 <div className={styles.typingIndicator}>
                   <div className={styles.dot}></div>
                   <div className={styles.dot}></div>
