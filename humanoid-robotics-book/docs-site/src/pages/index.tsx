@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import Chatbot from '@site/src/components/Chatbot';
 
 import styles from './index.module.css';
 
@@ -31,10 +32,10 @@ function HomepageHeader() {
           radial-gradient(circle at 80% 70%, rgba(255,255,255,0.4) 0%, transparent 50%)
         `
       }}></div>
-      
+
       <div className="container" style={{position: 'relative', zIndex: 1}}>
         <div className="row" style={{alignItems: 'center'}}>
-          
+
           {/* LEFT SIDE - Text Content */}
           <div className="col col--6" style={{padding: '2rem'}}>
             <div>
@@ -49,7 +50,7 @@ function HomepageHeader() {
               }}>
                 Physical AI &<br/>Humanoid Robotics
               </h1>
-              
+
               {/* Subtitle */}
               <p style={{
                 color: 'rgba(255, 255, 255, 0.95)',
@@ -61,7 +62,7 @@ function HomepageHeader() {
               }}>
                 A Comprehensive Guide to Building Intelligent Humanoid Systems
               </p>
-              
+
               {/* Decorative Line */}
               <div style={{
                 width: '80px',
@@ -71,7 +72,7 @@ function HomepageHeader() {
                 boxShadow: '0 0 10px rgba(0, 255, 245, 0.8)',
                 borderRadius: '2px'
               }}></div>
-              
+
               {/* Author Info */}
               <div style={{marginBottom: '2rem'}}>
                 <p style={{
@@ -91,7 +92,7 @@ function HomepageHeader() {
                   🎓 GIAIC Student | 🏆 Hackathon 2025
                 </p>
               </div>
-              
+
               {/* Stats - Compact */}
               <div style={{
                 display: 'flex',
@@ -118,7 +119,7 @@ function HomepageHeader() {
                     fontWeight: '600'
                   }}>Chapters</span>
                 </div>
-                
+
                 <div style={{
                   background: 'rgba(255, 255, 255, 0.15)',
                   padding: '0.7rem 1.2rem',
@@ -139,7 +140,7 @@ function HomepageHeader() {
                   }}>Parts</span>
                 </div>
               </div>
-              
+
               {/* Buttons */}
               <div style={{display: 'flex', gap: '1rem', flexWrap: 'wrap'}}>
                 <Link
@@ -167,7 +168,7 @@ function HomepageHeader() {
                   }}>
                   📚 Start Reading
                 </Link>
-                
+
                 <Link
                   to="/docs/physical-ai-humanoid-robotics/part1-foundations/chapter1-introduction"
                   style={{
@@ -197,7 +198,7 @@ function HomepageHeader() {
               </div>
             </div>
           </div>
-          
+
           {/* RIGHT SIDE - Compact Book */}
           <div className="col col--6" style={{
             display: 'flex',
@@ -232,7 +233,7 @@ function HomepageHeader() {
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = 'scale(1) translateY(0)';
             }}>
-              
+
               {/* Corner Badge */}
               <div style={{
                 position: 'absolute',
@@ -240,7 +241,7 @@ function HomepageHeader() {
                 right: '12px',
                 fontSize: '1.5rem'
               }}>⚡</div>
-              
+
               {/* Robot Icon - Medium Size */}
               <div style={{
                 fontSize: '7rem',
@@ -249,7 +250,7 @@ function HomepageHeader() {
               }}>
                 🤖
               </div>
-              
+
               {/* Book Title */}
               <h2 style={{
                 color: 'white',
@@ -263,7 +264,7 @@ function HomepageHeader() {
               }}>
                 PHYSICAL AI<br/>HUMANOID<br/>ROBOTICS
               </h2>
-              
+
               {/* Line */}
               <div style={{
                 width: '70%',
@@ -272,7 +273,7 @@ function HomepageHeader() {
                 margin: '1rem 0',
                 boxShadow: '0 0 15px #00FFF5'
               }}></div>
-              
+
               {/* Author */}
               <p style={{
                 color: '#FFD700',
@@ -283,7 +284,7 @@ function HomepageHeader() {
               }}>
                 AZIZA SIDDIQUI
               </p>
-              
+
               {/* Badge */}
               <div style={{
                 marginTop: '1rem',
@@ -306,11 +307,11 @@ function HomepageHeader() {
       {/* CSS Animations */}
       <style>{`
         @keyframes floatBook {
-          0%, 100% { 
+          0%, 100% {
             transform: translateY(0px);
             box-shadow: 0 25px 60px rgba(123, 44, 191, 0.8), 0 0 60px rgba(0, 255, 245, 0.6);
           }
-          50% { 
+          50% {
             transform: translateY(-20px);
             box-shadow: 0 35px 70px rgba(123, 44, 191, 0.9), 0 0 70px rgba(0, 255, 245, 0.7);
           }
@@ -329,6 +330,7 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       {/* REMOVED: HomepageFeatures - niche wala bar nahi chahiye */}
       {/* REMOVED: About Section - sirf title page chahiye */}
+      <Chatbot />
     </Layout>
   );
 }
